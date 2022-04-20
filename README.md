@@ -1,5 +1,5 @@
 # Building the docker image
-Specify the kubectl and aws cli version you want installed. This way you can customize and update to your needs.
+Specify the kubectl and aws cli version you want installed if you want to make your own image. This way you can customize and update to your needs.  Otherwise you can use the docker hub image.
 Example: 
 `docker build . --build-arg KUBECTL_VERSION=1.23.5 --build-arg AWSCLI_VERSION=2.5.6`
 

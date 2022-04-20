@@ -17,7 +17,7 @@ spec:
           containers:
           - name: kubectl
             imagePullPolicy: Always
-            image: odaniait/aws-kubectl:latest
+            image: proscia/aws_ecr_helper:1.0.0
             command:
               - "/run.sh"
             env:
