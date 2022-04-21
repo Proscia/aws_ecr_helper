@@ -1,0 +1,9 @@
+apiVersion: v2
+name: aws-ecr-helper
+description: Helper utility for refreshing AWS ECR based secrets
+maintainers:
+  - name: Adam Lang
+    email: devops@proscia.com
+    url: proscia.com
+version: "1.0.0"
+appVersion: "1.0.0"

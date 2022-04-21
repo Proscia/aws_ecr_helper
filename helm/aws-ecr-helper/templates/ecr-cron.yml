@@ -3,7 +3,7 @@ kind: CronJob
 metadata:
   name: aws-ecr-helper-cron
 spec:
-  schedule: "* */8 * * *"
+  schedule: {{ .Values.cronSchedule }}
   successfulJobsHistoryLimit: 2
   failedJobsHistoryLimit: 2
   jobTemplate:
@@ -11,29 +11,23 @@ spec:
       backoffLimit: 4
       template:
         spec:
-          serviceAccountName: aws-ecr-helper-service-account
+          serviceAccountName: {{ .Values.serviceAccount }}
           terminationGracePeriodSeconds: 0
           restartPolicy: Never
           containers:
           - name: kubectl
             imagePullPolicy: Always
-            image: proscia/aws_ecr_helper:1.0.0
+            image: proscia/aws_ecr_helper:{{ .Values.imageVersion }}
             command:
               - "/run.sh"
             env:
               - name: AWS_ACCOUNT
-                value: "YOUR-AWS-ACCOUNT"
+                value: {{ .Values.awsAccount }}
               - name: AWS_REGION
-                value: "eu-central-1"
+                value: {{ .Values.awsRegion }}
               - name: NAMESPACES
-                value: "infrastructure live"
+                value: {{ .Values.namespace }}
               - name: AWS_ACCESS_KEY_ID
-                valueFrom:
-                  secretKeyRef:
-                    name: aws-secrets
-                    key: aws-access-key-id
+                value: {{ .Values.awsAccessKey }}
               - name: AWS_SECRET_ACCESS_KEY
-                valueFrom:
-                  secretKeyRef:
-                    name: aws-secrets
-                    key: aws-secret-access-key
+                value: {{ .Values.awsSecretAccessKey }}

@@ -1,0 +1,9 @@
+imageVersion: "1.0.0"
+# Override for the namespace of storing pull secret
+namespace: default
+awsAccessKey: ""
+awsSecretAccessKey: ""
+serviceAccount: aws-ecr-helper-service-account
+awsAccount: ""
+awsRegion: ""
+cronSchedule: "* */8 * * *"
