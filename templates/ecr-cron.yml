@@ -11,7 +11,7 @@ spec:
       backoffLimit: 4
       template:
         spec:
-          serviceAccountName: ecr-update-service-account
+          serviceAccountName: aws-ecr-helper-service-account
           terminationGracePeriodSeconds: 0
           restartPolicy: Never
           containers:
