@@ -1,7 +1,7 @@
 imageVersion: "1.0.0"
 # Override for the namespace of storing pull secret
 namespace: default
-awsAccessKey: ""
+awsAccessKeyId: ""
 awsSecretAccessKey: ""
 serviceAccount: aws-ecr-helper-service-account
 awsAccount: ""

@@ -1,6 +1,8 @@
 #!/usr/bin/env sh
 set -e
 
+
+
 echo "Retrieving Docker Credentials for the AWS ECR Registry ${AWS_ACCOUNT}"
 DOCKER_REGISTRY_SERVER=https://${AWS_ACCOUNT}.dkr.ecr.${AWS_REGION}.amazonaws.com
 DOCKER_USER=AWS

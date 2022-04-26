@@ -28,6 +28,6 @@ spec:
               - name: NAMESPACES
                 value: {{ .Values.namespace }}
               - name: AWS_ACCESS_KEY_ID
-                value: {{ .Values.awsAccessKey }}
+                value: {{ .Values.awsAccessKeyId }}
               - name: AWS_SECRET_ACCESS_KEY
                 value: {{ .Values.awsSecretAccessKey }}
